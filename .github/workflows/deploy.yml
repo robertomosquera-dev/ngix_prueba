@@ -1,0 +1,20 @@
+name: Deploy API to VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: [self-hosted, vps]
+    steps:
+      # Paso 1: este de aqui es un pull, descarga todos lo cabios en el vps
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Paso 2: Levantar todo con Docker Compose
+      # Como el Dockerfile compila adentro, este único comando hace TODO el trabajo
+      - name: Deploy with Docker Compose
+        run: |
+          docker compose up --build -d
