@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-NginxLabApplication<nginx-lab>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.example.nginxlab.NginxLabApplication",
+      "projectName": "nginx-lab",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
