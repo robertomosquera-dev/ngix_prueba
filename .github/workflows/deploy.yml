@@ -16,5 +16,11 @@ jobs:
       # Paso 2: Levantar todo con Docker Compose
       # Como el Dockerfile compila adentro, este único comando hace TODO el trabajo
       - name: Deploy with Docker Compose
+        env:
+          DB_HOST: ${{ secrets.DB_HOST }}
+          DB_PORT: ${{ secrets.DB_PORT }}
+          DB_NAME: ${{ secrets.DB_NAME }}
+          DB_USERNAME: ${{ secrets.DB_USERNAME }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
         run: |
           docker compose up --build -d
